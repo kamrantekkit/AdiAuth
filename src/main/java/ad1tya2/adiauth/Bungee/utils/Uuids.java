@@ -33,6 +33,7 @@ public class Uuids {
                     return Optional.of(getUUidFromUndashedString(parser.parse(
                             tools.getString(response.getEntity().getContent())).getAsJsonObject().get("id").getAsString()));
                 case 204:
+                case 404:
                     return Optional.empty();
                 default:
                     return null;

@@ -150,6 +150,7 @@ public class storage {
                 if(oldUserByName == null && getAccounts(ip, AccountType.TOTAL)>=Config.maxTotalAccounts){
                   return null;
                 }
+
                 if(oldUserByName != null) {
 
                     if(ip != oldUserByName.lastIp){

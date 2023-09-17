@@ -71,7 +71,7 @@ public class pluginMsg implements PluginMessageListener{
                     p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 1000000, 10));
                 }
                 p.setAllowFlight(true);
-                p.spigot().setCollidesWithEntities(false);
+                p.setCollidable(false);
             }
             frozenPlayers.add(uuid);
         }
@@ -86,7 +86,7 @@ public class pluginMsg implements PluginMessageListener{
     }
 
     public static void unfreezePlayer(Player p){
-        p.spigot().setCollidesWithEntities(true);
+        p.setCollidable(true);
         frozenPlayers.remove(p.getUniqueId());
         if(blindness) {
             p.removePotionEffect(PotionEffectType.BLINDNESS);

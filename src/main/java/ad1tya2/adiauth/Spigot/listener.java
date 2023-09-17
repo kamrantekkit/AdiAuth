@@ -27,7 +27,7 @@ public class listener implements Listener {
     public void onJoin(PlayerJoinEvent event){
         Player p = event.getPlayer();
         if(isFrozen(p)){
-            p.spigot().setCollidesWithEntities(false);
+            p.setCollidable(false);
             if(pluginMsg.blindness){
                  p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 1000000, 10));
             }
